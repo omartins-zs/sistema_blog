@@ -2,20 +2,21 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 
-class Post_model extends MY_Model {
+class Post_model extends MY_Model
+{
     protected $table_name = 'posts';
-    protected $primary_key = 'id';
 
-    public function get($id = NULL, $single = FALSE)
+    public function get_posts($categoria_id = NULL)
     {
-        if ($id != NULL) {
-            $this->db->where($this->primary_key, $id);
-            $method = 'row';
-        } else if ($single == TRUE) {
-            $method = 'row';
-        } else {
-            $method = 'result';
+        if ($categoria_id != NULL) {
+            $this->db->where('categoria_id', $categoria_id);
         }
-        return $this->db->get($this->table_name)->$method();
+
+        $this->db->select('c.nome, p.* ');
+        $this->db->from('posts p');
+        $this->db->join('categorias c', 'c.id = p.categoria_id', 'left');
+        $this->db->order_by('p.data_criacao', 'DESC');
+
+        return $this->db->get()->result();
     }
 }
