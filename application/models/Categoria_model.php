@@ -6,6 +6,23 @@ class Categoria_model extends MY_Model
 {
     protected $table_name = 'categorias';
 
+    public $rules = array(
+        'categoria' => array(
+            'field' => 'nome',
+            'label' => 'Categoria',
+            'rules' => 'trim|required'
+        )
+    );
+
+    public function get_new()
+    {
+        // Instancia classe vazia
+        $categoria = new stdClass(); //clase vacia
+        $categoria->nome = '';
+    
+        return $categoria;
+    }
+
     public function get_categorias()
     {
         $this->db->select('c.id, c.nome, count(*) as num_posts');
