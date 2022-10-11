@@ -6,6 +6,35 @@ class Post_model extends MY_Model
 {
     protected $table_name = 'posts';
 
+    public $rules = array(
+        'titulo' => array(
+            'field' => 'titulo',
+            'label' => 'Titulo',
+            // 'rules' => 'trim|required'
+        ),
+        'descricao' => array(
+            'field' => 'descricao',
+            'label' => 'Descripcion',
+            // 'rules' => 'trim|required'
+        ),
+        'categoria_id' => array(
+            'field' => 'categoria_id',
+            'label' => 'Categoria',
+            // 'rules' => 'trim|required'
+        )
+    );
+
+    public function get_new()
+    {
+        $post = new stdClass(); //clase vacia
+        $post->imagem = '';
+        $post->titulo = '';
+        $post->descricao = '';
+        $post->categoria_id = 0;
+
+        return $post;
+    }
+
     public function get_posts($categoria_id = NULL)
     {
         if ($categoria_id != NULL) {
