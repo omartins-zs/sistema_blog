@@ -2,14 +2,14 @@
 <aside id="colorlib-aside" role="complementary" class="js-fullheight">
     <nav id="colorlib-main-menu" role="navigation">
         <ul>
-            <li class="colorlib-active"><a href="<?= base_url()?>">Inicio</a></li>
-            <li><a href="<?= base_url('blog/sobre')?>">Sobre</a></li>
-            <li><a href="<?= base_url('blog/contato')?>">Contato</a></li>
+            <li class="colorlib-active"><a href="<?= base_url() ?>">Inicio</a></li>
+            <li><a href="<?= base_url('blog/sobre') ?>">Sobre</a></li>
+            <li><a href="<?= base_url('blog/contato') ?>">Contato</a></li>
         </ul>
     </nav>
 
     <div class="colorlib-footer">
-        <h1 id="colorlib-logo" class="mb-4"><a href="index.html" style="background-image: url(<?= base_url()?>assets/images/bg_1.jpg);">Andrea <span>Moore</span></a></h1>
+        <h1 id="colorlib-logo" class="mb-4"><a href="index.html" style="background-image: url(<?= base_url() ?>assets/images/bg_1.jpg);">Andrea <span>Moore</span></a></h1>
         <div class="mb-4">
             <h3>Subscribe for newsletter</h3>
             <form action="#" class="colorlib-subscribe-form">

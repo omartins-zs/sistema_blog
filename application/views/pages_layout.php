@@ -7,8 +7,8 @@
         <?php $this->load->view('components/menu'); ?>
 
         <div id="colorlib-main">
-            
-        <?php $this->load->view($subview); ?>
+
+            <?php $this->load->view($subview); ?>
 
         </div><!-- END COLORLIB-MAIN -->
     </div><!-- END COLORLIB-PAGE -->

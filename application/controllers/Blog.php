@@ -12,13 +12,12 @@ class Blog extends CI_Controller
         // $this->var = $var;
     }
 
-
     public function index()
     {
         $data['categorias'] = $this->Categoria_model->get_categorias();
         $data['posts'] = $this->Post_model->get_posts();
         $data['subview'] = 'index';
-        $this->load->view('layout', $data);
+        $this->load->view('blog_layout', $data);
     }
 
     public function post($post_id)
@@ -26,14 +25,14 @@ class Blog extends CI_Controller
         $data['categorias'] = $this->Categoria_model->get_categorias();
         $data['post'] = $this->Post_model->get($post_id);
         $data['subview'] = 'post';
-        $this->load->view('layout', $data);
+        $this->load->view('blog_layout', $data);
     }
     public function categoria($categoria_id)
     {
         $data['posts'] = $this->Post_model->get_posts($categoria_id);
         $data['categorias'] = $this->Categoria_model->get_categorias();
         $data['subview'] = 'categoria';
-        $this->load->view('layout', $data);
+        $this->load->view('blog_layout', $data);
     }
 
     public function sobre()

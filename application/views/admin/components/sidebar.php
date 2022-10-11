@@ -1,11 +1,11 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 	<!-- Sidebar - Brand -->
-	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url('admin/dashboard') ?>">
 		<div class="sidebar-brand-icon rotate-n-15">
 			<i class="fas fa-laugh-wink"></i>
 		</div>
-		<div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+		<div class="sidebar-brand-text mx-3">Administração </div>
 	</a>
 
 	<!-- Divider -->
@@ -13,11 +13,15 @@
 
 	<!-- Nav Item - Dashboard -->
 	<li class="nav-item active">
-		<a class="nav-link" href="index.html">
+		<a class="nav-link" href="<?= base_url('admin/dashboard') ?>">
 			<i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>Inicio</span></a>
 	</li>
-
+<?php
+// echo '<pre>';
+// print_r($_SESSION);
+// echo '</pre>'
+?>
 	<!-- Divider -->
 	<hr class="sidebar-divider">
 
