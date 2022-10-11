@@ -3,47 +3,41 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends CI_Controller
 {
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    //     $this->load->model('Post_model');
-    //     $this->load->model('Categoria_model');
-    //     $this->load->helper('blog');
-    //     // $this->var = $var;
-    // }
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('User_model');
+        $this->load->library('form_validation');
+        $this->load->library('session');
+    }
 
-    // public function index()
-    // {
-    //     $data['categorias'] = $this->Categoria_model->get_categorias();
-    //     $data['posts'] = $this->Post_model->get_posts();
-    //     $data['subview'] = 'index';
-    //     $this->load->view('layout', $data);
-    // }
 
     public function login()
     {
-        // $data['categorias'] = $this->Categoria_model->get_categorias();
-        // $data['post'] = $this->Post_model->get($post_id);
-        // $data['subview'] = 'post';
-        $this->load->view('login_layout', $data);
-    }
-    // public function categoria($categoria_id)
-    // {
-    //     $data['posts'] = $this->Post_model->get_posts($categoria_id);
-    //     $data['categorias'] = $this->Categoria_model->get_categorias();
-    //     $data['subview'] = 'categoria';
-    //     $this->load->view('layout', $data);
-    // }
+        $dashboard = 'admin/dashboard';
+        $this->User_model->loggedin() == FALSE || redirect($dashboard);
 
-    // public function sobre()
-    // {
-    //     $data['subview'] = 'sobre';
-    //     $this->load->view('pages_layout', $data);
-    // }
-    // public function contato()
-    // {
-    //     $data['subview'] = 'contato';
-    //     $this->load->view('pages_layout', $data);
-    // }
+        $rules = $this->User_model->rules;
+        $this->form_validation->set_rules($rules);
+
+        if ($this->form_validation->run() == TRUE) {
+            if ($this->User_model->login() == TRUE) {
+                redirect($dashboard);
+            } else {
+                $this->session->set_flashdata('msg', 'Escreva corretamente seu email ou senha');
+                redirect('user/login', 'refresh');
+            }
+        }
+        $this->load->view('login_layout');
+    }
+
+    public function logout()
+    {
+        $this->User_model->logout();
+        redirect('user/login');
+    }
 }
+
+/* End of file User.php */
+/* Location: ./application/controllers/admin/User.php */
