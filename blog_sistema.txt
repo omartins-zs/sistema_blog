@@ -1,0 +1,58 @@
+Blog_sistema 
+
+CREATE TABLE `blog_ci3`.`categorias` ( `id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(100) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `blog_ci3`.`posts` ( `id` INT NOT NULL AUTO_INCREMENT , `categoria_id` INT NOT NULL , `imagem` VARCHAR(150) NOT NULL , `titulo` VARCHAR(150) NOT NULL , `descricao` TEXT NOT NULL , `autor` VARCHAR(150) NOT NULL , `data_criacao` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+ALTER TABLE `posts` ADD FOREIGN KEY (`categoria_id`) REFERENCES `categorias`(`id`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+INSERT INTO `categorias` (`id`, `nome`) VALUES (NULL, 'PHP'), (NULL, 'HTML'), (NULL, 'CSS'), (NULL, 'BOOTSTRAP'), (NULL, 'C#')
+
+INSERT INTO `posts` (`id`, `categoria_id`, `imagem`, `titulo`, `descricao`, `autor`, `data_criacao`) VALUES (NULL, '4', '', 'Etqiuetas de Bootstrap', 'Bootstrap é um framework web com código-fonte aberto para desenvolvimento de componentes de interface e front-end para sites e aplicações web, usando HTML, CSS e JavaScript, baseado em modelos de design para a tipografia, melhorando a experiência do usuário em um site amigável e responsivo', 'Jorge Lafon', CURRENT_TIMESTAMP), (NULL, '5', '', 'Linguagem ainda atual?', 'C# é uma linguagem de programação, multiparadigma, de tipagem forte, desenvolvida pela Microsoft como parte da plataforma .NET. A sua sintaxe orientada a objetos foi baseada no C++ mas inclui muitas influências de outras linguagens de programação, como Object Pascal e, principalmente, Java', 'Fernando Cruz', CURRENT_TIMESTAMP), (NULL, '1', '', 'Codeigniter o melhor framework', 'O CodeIgniter é um framework de desenvolvimento de aplicações em PHP. Seu objetivo, por meio de um abrangente conjunto de bibliotecas voltadas às tarefas mais comuns, de uma interface e uma estrutura', 'Wellignton Almeida', CURRENT_TIMESTAMP)
+
+Para adicionar IMAGEM
+ALTER TABLE `posts` CHANGE `imagem` `imagem` BLOB NOT NULL;
+
+ALTER TABLE `posts` CHANGE `data_criacao` `data_criacao` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+SELECT c.nome, p.* FROM `posts` p
+INNER JOIN categorias c 
+ON c.id = p.categoria_id
+ORDER BY data_criacao DESC
+
+SELECT c.id, c.nome, COUNT(*) AS num_posts FROM `posts` p 
+INNER JOIN categorias c
+ON c.id = p.categoria_id
+GROUP BY nome
+
+UPDATE `posts` SET `imagem` = 'image_1.jpg' WHERE `posts`.`id` = 1; UPDATE `posts` SET `imagem` = 'image_2.jpg' WHERE `posts`.`id` = 2; UPDATE `posts` SET `imagem` = 'image_3.jpg' WHERE `posts`.`id` = 3;
+
+INSERT INTO `posts` (`id`, `categoria_id`, `imagem`, `titulo`, `descricao`, `autor`, `data_criacao`) VALUES (NULL, '5', 'image_5.jpg', 'Laravel', 'Laravel é um framework PHP livre e open-source criado por Taylor B. Otwell para o desenvolvimento de sistemas web que utilizam o padrão MVC', 'Nicole Lopes', CURRENT_TIMESTAMP), (NULL, '2', 'image_7.jpg', 'React', 'O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. É mantido pelo Facebook, Instagram, outras empresas e uma comunidade de desenvolvedores individuais. É utilizado nos sites da Netflix, Imgur, Feedly, Airbnb, SeatGeek, HelloSign, Walmart e outros', 'Douglas Almeida', CURRENT_TIMESTAMP);
+09388948648608057647601115233262
+
+
+59388220611885808264822096839441
+
+
+SELECT c.nome, p.* FROM `posts` p 
+INNER JOIN categorias c
+ON c.id = p.categoria_id
+WHERE categoria_id = 2
+ORDER BY data_criacao DESC
+
+INSERT INTO `posts` (`id`, `categoria_id`, `imagem`, `titulo`, `descricao`, `autor`, `data_criacao`) VALUES (NULL, '3', 'image_6.jpg', 'TypeScript', 'TypeScript é uma linguagem de programação de código aberto desenvolvida pela Microsoft. É um superconjunto sintático estrito de JavaScript e adiciona tipagem estática opcional à linguagem', 'Victor Campos', CURRENT_TIMESTAMP);
+
+
+CREATE TABLE `blog_ci3`.`users` ( `id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(100) NOT NULL , `email` VARCHAR(100) NOT NULL , `senha` VARCHAR(250) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `users` (`id`, `nome`, `email`, `senha`) VALUES (NULL, 'Gabriel Gol', 'admin@gmail.com', '09388948648608057647601115233262'), (NULL, 'Fagner Borbulhas', 'fagner@gmail.com', '59388220611885808264822096839441')
+
+INSERT INTO `users` (`id`, `nome`, `email`, `senha`) VALUES (NULL, 'jorge', 'jorge@email.com', '123456789')
+
+Template: https://themewagon.com/themes/free-bootstrap-4-html5-blog-website-template-andrea/
+
+Template admin: https://startbootstrap.com/theme/sb-admin-2 
+
+Canal de Referencia Tutos Coders https://www.youtube.com/channel/UCN10DYsAtXdou8nclweQMDw/featured Playlist do Tutorial:  https://www.youtube.com/playlist?list=PL07bnCMX5KNR9YAb31_yKOarQIeB-F1ZV
+
+Crea un sistema de blog básico en codeigniter 3 y bootstrap 4 - Con su Frontend y Backend
