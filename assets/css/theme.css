@@ -1,73 +1,16 @@
 /* ============================================================
-   TEMA DARK/LIGHT — Sistema Blog CodeIgniter 3
+   TEMA DARK — Sistema Blog CodeIgniter 3
    Arquivo: assets/css/theme.css
    ============================================================ */
 
-/* ---- Variáveis de tema ---- */
-:root {
-  --bg-primary:       #ffffff;
-  --bg-secondary:     #f8f9fa;
-  --bg-sidebar:       #f4f6f8;
-  --bg-card:          #ffffff;
-  --bg-input:         #ffffff;
-  --text-primary:     #2d2d2d;
-  --text-secondary:   #6c757d;
-  --text-muted:       #999;
-  --border-color:     #e0e0e0;
-  --shadow:           0 4px 24px rgba(0,0,0,.08);
-  --shadow-hover:     0 8px 32px rgba(0,0,0,.14);
-  --accent:           #e05f28;
-  --accent-hover:     #c04a18;
-  --link-color:       #e05f28;
-  --nav-bg:           #1a1a2e;
-  --nav-text:         #ffffff;
-  --badge-bg:         #ffeee6;
-  --badge-text:       #e05f28;
-  --toggle-bg:        #e2e8f0;
-  --toggle-thumb:     #ffffff;
-  --toggle-icon:      "🌙";
-  --transition:       0.3s ease;
-  --radius:           10px;
-  --radius-lg:        16px;
-}
-
-[data-theme="dark"] {
-  --bg-primary:       #0f0f1a;
-  --bg-secondary:     #1a1a2e;
-  --bg-sidebar:       #16213e;
-  --bg-card:          #1e1e3a;
-  --bg-input:         #252545;
-  --text-primary:     #e8e8f0;
-  --text-secondary:   #a0a0c0;
-  --text-muted:       #6060a0;
-  --border-color:     #2a2a4a;
-  --shadow:           0 4px 24px rgba(0,0,0,.4);
-  --shadow-hover:     0 8px 32px rgba(0,0,0,.6);
-  --accent:           #ff7043;
-  --accent-hover:     #ff5722;
-  --link-color:       #ff7043;
-  --nav-bg:           #0a0a1a;
-  --nav-text:         #e8e8f0;
-  --badge-bg:         #2a1a0a;
-  --badge-text:       #ff7043;
-  --toggle-bg:        #2a2a4a;
-  --toggle-thumb:     #ff7043;
-  --toggle-icon:      "☀️";
-}
-
 /* ---- Transição suave ao trocar tema ---- */
-*, *::before, *::after {
-  transition: background-color var(--transition), color var(--transition), border-color var(--transition), box-shadow var(--transition);
+body, .sidebar-box, .blog-entry, .form-control, .bg-light, #colorlib-aside, .contact-info .info {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* ---- Base global ---- */
-body {
-  background-color: var(--bg-primary) !important;
-  color: var(--text-primary) !important;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* ---- Botão de toggle de tema ---- */
+/* ============================================================
+   BOTÃO DE TOGGLE DE TEMA (Aplica-se a Light e Dark)
+   ============================================================ */
 #theme-toggle {
   position: fixed;
   bottom: 2rem;
@@ -77,9 +20,8 @@ body {
   height: 52px;
   border-radius: 50%;
   border: none;
-  background: var(--accent);
+  background: #f96d00;
   color: #fff;
-  font-size: 1.3rem;
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(0,0,0,.25);
   display: flex;
@@ -90,7 +32,6 @@ body {
 #theme-toggle:hover {
   transform: scale(1.12) rotate(15deg);
   box-shadow: 0 6px 24px rgba(0,0,0,.35);
-  background: var(--accent-hover);
 }
 #theme-toggle .icon-sun  { display: none; }
 #theme-toggle .icon-moon { display: block; }
@@ -98,515 +39,114 @@ body {
 [data-theme="dark"] #theme-toggle .icon-moon { display: none; }
 
 /* ============================================================
-   BARRA LATERAL / ASIDE
+   REGRAS EXCLUSIVAS PARA O MODO ESCURO (Dark Mode)
    ============================================================ */
-#colorlib-aside {
-  background: var(--nav-bg) !important;
-  border-right: 1px solid var(--border-color);
-  box-shadow: 4px 0 24px rgba(0,0,0,.15);
+[data-theme="dark"] body {
+  background-color: #11121a !important;
+  color: #e8e8f0 !important;
 }
 
-#colorlib-aside nav ul li a {
-  color: var(--nav-text) !important;
-  font-weight: 500;
-  letter-spacing: .5px;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin: 2px 8px;
-  transition: background .2s, color .2s;
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, 
+[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
+  color: #ffffff !important;
 }
 
-#colorlib-aside nav ul li a:hover,
-#colorlib-aside nav ul li.colorlib-active a {
-  background: var(--accent) !important;
+/* Navbar / Aside */
+[data-theme="dark"] #colorlib-aside {
+  background-color: #1c1e2d !important;
+  border-right: 1px solid #2e3150 !important;
+}
+[data-theme="dark"] #colorlib-main-menu ul li a {
+  color: #b0b5d0 !important;
+}
+[data-theme="dark"] #colorlib-main-menu ul li.colorlib-active a {
+  color: #f96d00 !important;
+}
+
+/* Cards (Blog Entries) */
+[data-theme="dark"] .blog-entry {
+  background-color: #1c1e2d !important;
+  border: 1px solid #2e3150 !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,.4) !important;
+}
+[data-theme="dark"] .blog-entry .text h3 a {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .blog-entry .text p {
+  color: #a0a5c0 !important;
+}
+[data-theme="dark"] .blog-entry .meta span,
+[data-theme="dark"] .blog-entry .meta span a {
+  color: #8b91aa !important;
+}
+[data-theme="dark"] .blog-entry .meta span a:hover {
+  color: #f96d00 !important;
+}
+
+/* Sidebar Box (Search, Categorias) */
+[data-theme="dark"] .sidebar-box {
+  background-color: #1c1e2d !important;
+  border: 1px solid #2e3150 !important;
+}
+[data-theme="dark"] .sidebar-box .search-form .form-control {
+  background: #11121a !important;
+  border-color: #2e3150 !important;
   color: #fff !important;
 }
-
-#colorlib-aside .colorlib-footer {
-  color: var(--nav-text);
+[data-theme="dark"] .categories li a {
+  color: #a0a5c0 !important;
+  border-bottom: 1px solid #2e3150 !important;
+}
+[data-theme="dark"] .categories li a span {
+  color: #f96d00 !important;
 }
 
-#colorlib-aside .pfooter,
-#colorlib-aside .pfooter a {
-  color: rgba(255,255,255,.5) !important;
-  font-size: .78rem;
+/* Sections bg-light (como no Contact e About) */
+[data-theme="dark"] .bg-light {
+  background-color: #1c1e2d !important;
+  border: 1px solid #2e3150 !important;
 }
 
-/* ============================================================
-   CONTEÚDO PRINCIPAL
-   ============================================================ */
-#colorlib-page,
-#colorlib-main {
-  background: var(--bg-primary) !important;
+/* Formulários */
+[data-theme="dark"] .form-control {
+  background-color: #11121a !important;
+  border: 1px solid #2e3150 !important;
+  color: #e8e8f0 !important;
+}
+[data-theme="dark"] .form-control::placeholder {
+  color: #6c757d !important;
 }
 
-/* ============================================================
-   CARDS E BLOG ENTRIES
-   ============================================================ */
-.blog-entry {
-  background: var(--bg-card) !important;
-  border-radius: var(--radius-lg) !important;
-  box-shadow: var(--shadow) !important;
-  margin-bottom: 2rem !important;
-  overflow: hidden;
-  transition: transform .25s, box-shadow .25s !important;
-}
-
-.blog-entry:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: var(--shadow-hover) !important;
-}
-
-.blog-entry .text {
-  padding: 1.5rem !important;
-}
-
-.blog-entry h3 a {
-  color: var(--text-primary) !important;
-  font-weight: 700;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  text-decoration: none;
-}
-
-.blog-entry h3 a:hover {
-  color: var(--accent) !important;
-}
-
-.blog-entry .meta span {
-  color: var(--text-muted) !important;
-  font-size: .82rem;
-  margin-right: .8rem;
-}
-
-.blog-entry .meta a {
-  color: var(--accent) !important;
-}
-
-/* Imagem do post na listagem */
-.blog-entry .img {
-  min-height: 220px;
-  width: 280px;
-  flex-shrink: 0;
-  background-size: cover;
-  background-position: center;
-}
-
-/* Botão "Ler mais" */
-.btn-custom {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  background: var(--accent);
-  color: #fff !important;
-  padding: .45rem 1.2rem;
-  border-radius: 50px;
-  font-size: .85rem;
-  font-weight: 600;
-  text-decoration: none !important;
-  transition: background .2s, transform .15s;
-}
-
-.btn-custom:hover {
-  background: var(--accent-hover);
-  transform: translateX(3px);
-}
-
-/* ============================================================
-   SIDEBAR DO BLOG
-   ============================================================ */
-.sidebar {
-  background: var(--bg-sidebar) !important;
-  border-left: 1px solid var(--border-color) !important;
-}
-
-.sidebar h3 {
-  color: var(--text-primary) !important;
-  font-size: 1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding-bottom: .5rem;
-  border-bottom: 2px solid var(--accent);
-  margin-bottom: 1rem;
-}
-
-.sidebar a {
-  color: var(--text-secondary) !important;
-  transition: color .2s;
-}
-
-.sidebar a:hover {
-  color: var(--accent) !important;
-}
-
-/* ============================================================
-   NAVBAR / MENU MOBILE TOGGLE
-   ============================================================ */
-.js-colorlib-nav-toggle {
-  background: var(--accent) !important;
-}
-
-/* ============================================================
-   SEÇÕES BG-LIGHT → respeitar tema
-   ============================================================ */
-.bg-light {
-  background-color: var(--bg-secondary) !important;
-}
-
-.info.bg-light,
-.contact-form.bg-light {
-  background-color: var(--bg-card) !important;
-  border: 1px solid var(--border-color) !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--shadow) !important;
-}
-
-/* ============================================================
-   FORMULÁRIO DE CONTATO
-   ============================================================ */
-.contact-form {
-  border-radius: var(--radius-lg) !important;
-  padding: 2rem !important;
-}
-
-.form-control {
-  background-color: var(--bg-input) !important;
-  border: 1.5px solid var(--border-color) !important;
-  color: var(--text-primary) !important;
-  border-radius: 8px !important;
-  padding: .65rem 1rem !important;
-  transition: border-color .2s, box-shadow .2s !important;
-}
-
-.form-control:focus {
-  border-color: var(--accent) !important;
-  box-shadow: 0 0 0 3px rgba(224,95,40,.15) !important;
-  outline: none !important;
-}
-
-.form-control::placeholder {
-  color: var(--text-muted) !important;
-}
-
-.btn-primary {
-  background: var(--accent) !important;
-  border-color: var(--accent) !important;
-  border-radius: 50px !important;
-  padding: .6rem 2rem !important;
-  font-weight: 600;
-  letter-spacing: .5px;
-  transition: background .2s, transform .15s !important;
-}
-
-.btn-primary:hover {
-  background: var(--accent-hover) !important;
-  border-color: var(--accent-hover) !important;
-  transform: translateY(-2px);
-}
-
-/* ============================================================
-   MAPA DE CONTATO (substituído por mapa OpenStreetMap)
-   ============================================================ */
-#map {
-  width: 100% !important;
-  height: 400px !important;
-  border-radius: var(--radius-lg) !important;
-  overflow: hidden !important;
-  border: 1px solid var(--border-color) !important;
-  background: var(--bg-secondary);
-}
-
-#map iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  filter: none;
-  transition: filter .3s;
-}
-
+/* Mapa do contato (OpenStreetMap invertido no escuro) */
 [data-theme="dark"] #map iframe {
   filter: invert(90%) hue-rotate(180deg);
 }
 
-/* ============================================================
-   INFORMAÇÕES DE CONTATO
-   ============================================================ */
-.contact-info .info {
-  padding: 1.25rem !important;
-  border-radius: var(--radius) !important;
-}
-
-.contact-info .info span {
-  display: block;
-  font-weight: 700;
-  font-size: .78rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent) !important;
-  margin-bottom: .25rem;
-}
-
-.contact-info .info p,
-.contact-info .info a {
-  color: var(--text-secondary) !important;
-  margin: 0;
-}
-
-.contact-info .info a:hover {
-  color: var(--accent) !important;
-}
-
-/* ============================================================
-   PÁGINA SOBRE
-   ============================================================ */
-.ftco-about .text h2 {
-  color: var(--text-primary) !important;
-}
-
-.ftco-about .text h2 span {
-  color: var(--accent) !important;
-}
-
-.ftco-about .text p {
-  color: var(--text-secondary) !important;
-  line-height: 1.8;
-}
-
-/* ============================================================
-   POST INDIVIDUAL
-   ============================================================ */
-.post-detail {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  box-shadow: var(--shadow);
-}
-
-.post-detail h1 {
-  color: var(--text-primary) !important;
-  font-size: 1.9rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 1rem;
-}
-
-.post-detail p {
-  color: var(--text-secondary) !important;
-  line-height: 1.8;
-  font-size: 1.05rem;
-}
-
-.post-detail img {
-  border-radius: var(--radius) !important;
-  box-shadow: var(--shadow);
-  margin-bottom: 1.5rem;
-  max-height: 420px;
-  object-fit: cover;
-  width: 100%;
-}
-
-/* ============================================================
-   LOADER
-   ============================================================ */
-#ftco-loader {
-  background: var(--bg-primary) !important;
-}
-
-/* ============================================================
-   LOGO / HEADER DO SIDEBAR
-   ============================================================ */
-#colorlib-logo a {
-  color: #fff !important;
-  font-size: 1.8rem !important;
-  font-weight: 800;
-  font-family: 'Abril Fatface', cursive;
-  text-shadow: 2px 2px 8px rgba(0,0,0,.3);
-}
-
-#colorlib-logo span {
-  color: var(--accent) !important;
-}
-
-/* Newsletter no aside */
-.colorlib-subscribe-form .form-control {
-  background: rgba(255,255,255,.1) !important;
-  border-color: rgba(255,255,255,.2) !important;
-  color: #fff !important;
-}
-
-.colorlib-subscribe-form .form-control::placeholder {
-  color: rgba(255,255,255,.5) !important;
-}
-
-/* ============================================================
-   BADGES / CATEGORIAS
-   ============================================================ */
-.badge-category {
-  display: inline-block;
-  background: var(--badge-bg);
-  color: var(--badge-text);
-  padding: .25rem .75rem;
-  border-radius: 50px;
-  font-size: .75rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.badge-category:hover {
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-}
-
-/* ============================================================
-   PÁGINA DE LOGIN — Dark mode support
-   ============================================================ */
-.bg-gradient-primary {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
-  min-height: 100vh;
-}
-
-.login-card {
-  background: var(--bg-card) !important;
-  border-radius: var(--radius-lg) !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,.3) !important;
-}
-
-/* ============================================================
-   PAINEL ADMIN — Dark mode support
-   ============================================================ */
-[data-theme="dark"] #wrapper {
-  background: var(--bg-primary) !important;
-}
-
+/* Admin Panel - Dark Mode Support */
+[data-theme="dark"] #wrapper,
 [data-theme="dark"] #content-wrapper {
-  background: var(--bg-primary) !important;
+  background-color: #11121a !important;
 }
-
-[data-theme="dark"] .card {
-  background: var(--bg-card) !important;
-  border-color: var(--border-color) !important;
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .card-header {
-  background: var(--bg-secondary) !important;
-  border-color: var(--border-color) !important;
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .sidebar {
-  background: var(--bg-secondary) !important;
-}
-
-[data-theme="dark"] .sticky-footer {
-  background: var(--bg-card) !important;
-  color: var(--text-secondary) !important;
-}
-
-[data-theme="dark"] table {
-  color: var(--text-primary) !important;
-}
-
-[data-theme="dark"] .table-bordered td,
-[data-theme="dark"] .table-bordered th {
-  border-color: var(--border-color) !important;
-}
-
-[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
-  background: var(--bg-secondary) !important;
-}
-
+[data-theme="dark"] .card,
+[data-theme="dark"] .card-header,
 [data-theme="dark"] .dropdown-menu {
-  background: var(--bg-card) !important;
-  border-color: var(--border-color) !important;
+  background-color: #1c1e2d !important;
+  border-color: #2e3150 !important;
+  color: #e8e8f0 !important;
 }
-
+[data-theme="dark"] .card-header h6 {
+  color: #ffffff !important;
+}
+[data-theme="dark"] .table {
+  color: #e8e8f0 !important;
+}
+[data-theme="dark"] .table-bordered td, 
+[data-theme="dark"] .table-bordered th {
+  border-color: #2e3150 !important;
+}
 [data-theme="dark"] .dropdown-item {
-  color: var(--text-primary) !important;
+  color: #b0b5d0 !important;
 }
-
 [data-theme="dark"] .dropdown-item:hover {
-  background: var(--bg-secondary) !important;
-}
-
-/* ============================================================
-   SCROLLBAR CUSTOMIZADA
-   ============================================================ */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-hover);
-}
-
-/* ============================================================
-   RESPONSIVIDADE MOBILE
-   ============================================================ */
-@media (max-width: 768px) {
-  #theme-toggle {
-    bottom: 1rem;
-    right: 1rem;
-    width: 44px;
-    height: 44px;
-    font-size: 1.1rem;
-  }
-
-  .blog-entry .img {
-    width: 100%;
-    min-height: 180px;
-  }
-
-  .blog-entry {
-    flex-direction: column !important;
-  }
-
-  #map {
-    height: 250px !important;
-  }
-}
-
-/* ============================================================
-   ANIMAÇÕES DE ENTRADA
-   ============================================================ */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.blog-entry,
-.info,
-.contact-form {
-  animation: fadeInUp .4s ease both;
-}
-
-.blog-entry:nth-child(1) { animation-delay: .05s; }
-.blog-entry:nth-child(2) { animation-delay: .10s; }
-.blog-entry:nth-child(3) { animation-delay: .15s; }
-.blog-entry:nth-child(4) { animation-delay: .20s; }
-.blog-entry:nth-child(5) { animation-delay: .25s; }
-
-/* ============================================================
-   FIX: ftco-section background
-   ============================================================ */
-.ftco-section {
-  background: transparent !important;
-}
-
-/* ============================================================
-   META WRAP / ICON COLORS
-   ============================================================ */
-.meta-wrap .icon-calendar,
-.meta-wrap .icon-folder-o,
-.meta-wrap .icon-user {
-  color: var(--accent);
+  background-color: #11121a !important;
 }

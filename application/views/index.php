@@ -3,7 +3,7 @@
         <?php foreach ($posts as $post) : ?>
             <div class="col-md-12">
                 <div class="blog-entry ftco-animate d-md-flex">
-                    <a href="single.html" class="img img-2" style="background-image: url(<?= base_url('assets/images/' . $post->imagem) ?>);"></a>
+                    <a href="<?= base_url('blog/post/' . $post->id) ?>" class="img img-2" style="background-image: url(<?= base_url('assets/images/' . $post->imagem) ?>);"></a>
                     <div class="text text-2 pl-md-4">
                         <h3 class="mb-2"><a href="<?= base_url('blog/post/' . $post->id) ?>"><?= $post->titulo ?></a></h3>
                         <div class="meta-wrap">
@@ -22,7 +22,7 @@
     <?php else : ?>
         <div class="col-md-12">
             <div class="blog-entry ftco-animate d-md-flex">
-                <p>No hay articulos</p>
+                <p>Nenhum artigo encontrado.</p>
             </div>
         </div>
     <?php endif ?>
