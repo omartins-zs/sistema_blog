@@ -91,7 +91,33 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('#dataTable').DataTable({
+                "ordering": true,
+                "paging": true,
+                "searching": true,
                 "order": [],
+                "oLanguage": {
+                    "sEmptyTable": "Nenhum registro encontrado na tabela",
+                    "sInfo": "Mostrando _START_ até _END_ de _TOTAL_ registros",
+                    "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+                    "sInfoFiltered": "(filtrado de _MAX_ registros no total)",
+                    "sInfoPostFix": "",
+                    "sInfoThousands": ".",
+                    "sLengthMenu": "Mostrar _MENU_ registros por página",
+                    "sLoadingRecords": "Carregando...",
+                    "sProcessing": "Processando...",
+                    "sZeroRecords": "Nenhum registro encontrado",
+                    "sSearch": "Pesquisar:",
+                    "oPaginate": {
+                        "sNext": "Próximo",
+                        "sPrevious": "Anterior",
+                        "sFirst": "Primeiro",
+                        "sLast": "Último"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": ordenar coluna de forma crescente",
+                        "sSortDescending": ": ordenar coluna de forma decrescente"
+                    }
+                }
             });
         });
 
