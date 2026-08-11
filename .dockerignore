@@ -1,0 +1,11 @@
+.git
+.gitignore
+.editorconfig
+docker-compose.yml
+Dockerfile
+*.md
+*.txt
+*.rst
+application/logs/*
+application/cache/*
+vendor/

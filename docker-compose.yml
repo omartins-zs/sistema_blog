@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  # Serviço da aplicação PHP/CodeIgniter
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sistema_blog_app
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - ./application/logs:/var/www/html/application/logs
+      - ./application/cache:/var/www/html/application/cache
+      - ./assets/images:/var/www/html/assets/images
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DB_HOST=db
+      - DB_USER=blog_user
+      - DB_PASS=blog_pass123
+      - DB_NAME=blog_ci3
+    networks:
+      - blog_network
+
+  # Serviço do banco de dados MySQL
+  db:
+    image: mysql:5.7
+    container_name: sistema_blog_db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: blog_ci3
+      MYSQL_USER: blog_user
+      MYSQL_PASSWORD: blog_pass123
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - blog_network
+
+  # phpMyAdmin para gerenciar o banco
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: sistema_blog_phpmyadmin
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - blog_network
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  blog_network:
+    driver: bridge
