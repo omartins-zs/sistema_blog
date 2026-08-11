@@ -21,21 +21,26 @@ class User_model extends MY_Model
     public function login()
     {
         $user = $this->get_by([
-            'email' => $this->input->post('email'),
-            'senha' => $this->hash($this->input->post('senha'))
+            'email' => $this->input->post('email')
         ], TRUE);
 
         if (null !== $user) {
+            $input_pass = $this->input->post('senha');
+            $hash_sha512 = $this->hash($input_pass);
+            $hash_md5 = md5($input_pass);
 
-            $data = [
-                "nome" => $user->nome,
-                "loggedin" => TRUE
-            ];
+            if ($user->senha === $hash_sha512 || $user->senha === $hash_md5) {
+                $data = [
+                    "nome" => $user->nome,
+                    "loggedin" => TRUE
+                ];
 
-            $this->session->set_userdata($data);
+                $this->session->set_userdata($data);
 
-            return TRUE;
+                return TRUE;
+            }
         }
+        return FALSE;
     }
 
     public function hash($string)
