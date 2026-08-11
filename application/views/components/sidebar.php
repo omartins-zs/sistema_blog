@@ -1,8 +1,8 @@
 	<div class="sidebar-box pt-md-4">
-		<form action="#" class="search-form">
+		<form action="<?= base_url('blog/buscar') ?>" method="GET" class="search-form">
 			<div class="form-group">
 				<span class="icon icon-search"></span>
-				<input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+				<input type="text" name="q" class="form-control" placeholder="Pesquisar artigo..." required>
 			</div>
 		</form>
 	</div>
@@ -14,7 +14,7 @@
 					<li><a href="<?= base_url('blog/categoria/' . $categoria->id) ?>"><?= $categoria->nome ?><span>(<?= $categoria->num_posts ?>)</span></a></li>
 				<?php endforeach  ?>
 			<?php else : ?>
-				<li><a href="<?= base_url() ?>">N„o h· categorias <span>(0)</span></a></li>
+				<li><a href="<?= base_url() ?>">N√£o h√° categorias <span>(0)</span></a></li>
 			<?php endif ?>
 		</ul>
 	</div>

@@ -45,4 +45,15 @@ class Blog extends CI_Controller
         $data['subview'] = 'contato';
         $this->load->view('pages_layout', $data);
     }
+    public function buscar()
+    {
+        $query = $this->input->get('q');
+        if (empty($query)) {
+            redirect('blog');
+        }
+        $data['posts'] = $this->Post_model->buscar_posts($query);
+        $data['categorias'] = $this->Categoria_model->get_categorias();
+        $data['subview'] = 'index';
+        $this->load->view('blog_layout', $data);
+    }
 }

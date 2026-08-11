@@ -59,7 +59,10 @@
    /* Form Elements */
    body.dark-mode .form-control { background:rgba(0,0,0,0.25) !important; border: 1px solid rgba(255,255,255,0.1) !important; color:#F3F4F6 !important; border-radius: 6px; padding-left: 15px; }
    body.dark-mode .form-control:focus { border-color: #F96D00 !important; background:rgba(0,0,0,0.4) !important; box-shadow: 0 0 0 0.2rem rgba(249, 109, 0, 0.25) !important; }
-   body.dark-mode .search-form .form-group .icon { color: #9CA3AF !important; }
+   body.dark-mode .search-form .form-group { background: transparent !important; }
+   body.dark-mode .search-form .form-control { background: #111827 !important; border: 1px solid #374151 !important; color: #F3F4F6 !important; border-radius: 8px !important; }
+   body.dark-mode .search-form .form-control::placeholder { color: #9CA3AF !important; }
+   body.dark-mode .search-form .icon { color: #9CA3AF !important; }
    
    /* Generic & Contact */
    body.dark-mode .bg-light, body.dark-mode .contact-form, body.dark-mode .info, body.dark-mode #map { background:#1F2937 !important; color:#9CA3AF !important; border: 1px solid #374151 !important; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
