@@ -57,7 +57,7 @@
                 <?php endforeach ?>
             </select>
         </div>
-        <button class="btn btn-primary" type="submit">Registrar Articulo</button>
+        <button class="btn btn-primary" type="submit"><?= empty($post->titulo) ? 'Criar Artigo' : 'Salvar Alterações' ?></button>
         <?php echo form_close() ?>
     </div>
 </div>

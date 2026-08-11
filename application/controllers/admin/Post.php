@@ -48,7 +48,7 @@ class Post extends CI_Controller
 
             if ($id) {
 
-                if (!empty($_FILES['imagem']['nome'])) {
+                if (!empty($_FILES['imagem']['name'])) {
 
                     if ($this->upload->do_upload('imagem')) {
 
