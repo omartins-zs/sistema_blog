@@ -32,4 +32,16 @@
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/flaticon.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/icomoon.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/style.css">
+
+  <style>
+    /* Garante visibilidade imediata — animação via JS é opcional */
+    .ftco-animate {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .ftco-animate.ftco-animated {
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
 </head>
