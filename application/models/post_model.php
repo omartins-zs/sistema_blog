@@ -48,4 +48,21 @@ class Post_model extends MY_Model
 
         return $this->db->get()->result();
     }
+
+    public function buscar_posts($query)
+    {
+        $this->db->select('c.nome, p.* ');
+        $this->db->from('posts p');
+        $this->db->join('categorias c', 'c.id = p.categoria_id', 'left');
+        
+        $this->db->group_start();
+        $this->db->like('p.titulo', $query);
+        $this->db->or_like('p.descricao', $query);
+        $this->db->or_like('c.nome', $query);
+        $this->db->group_end();
+        
+        $this->db->order_by('p.data_criacao', 'DESC');
+
+        return $this->db->get()->result();
+    }
 }
