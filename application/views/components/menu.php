@@ -1,10 +1,11 @@
 <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 <aside id="colorlib-aside" role="complementary" class="js-fullheight">
     <nav id="colorlib-main-menu" role="navigation">
+        <?php $uri = uri_string(); ?>
         <ul>
-            <li class="colorlib-active"><a href="<?= base_url() ?>">Inicio</a></li>
-            <li><a href="<?= base_url('blog/sobre') ?>">Sobre</a></li>
-            <li><a href="<?= base_url('blog/contato') ?>">Contato</a></li>
+            <li class="<?= ($uri == '' || $uri == 'blog/index') ? 'colorlib-active' : '' ?>"><a href="<?= base_url() ?>">Inicio</a></li>
+            <li class="<?= ($uri == 'blog/sobre') ? 'colorlib-active' : '' ?>"><a href="<?= base_url('blog/sobre') ?>">Sobre</a></li>
+            <li class="<?= ($uri == 'blog/contato') ? 'colorlib-active' : '' ?>"><a href="<?= base_url('blog/contato') ?>">Contato</a></li>
         </ul>
     </nav>
 
