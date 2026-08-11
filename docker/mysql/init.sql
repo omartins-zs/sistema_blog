@@ -74,6 +74,6 @@ INSERT INTO `posts` (`categoria_id`, `imagem`, `titulo`, `descricao`, `autor`, `
 -- ============================================================
 INSERT INTO `users` (`nome`, `email`, `senha`) VALUES
   ('Gabriel Gol',     'admin@gmail.com',  'ad57cb3de9c53c1fc7de94665f6f1db2dfbcaaf73063769fed0b3011466eba602c2f423c4725c6dfacdc2973a518a18e0784e848ca3aabd7cadfd140df1df447'),
-  ('Fagner Borbulhas','fagner@gmail.com',  'cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e'),
-  ('Admin Blog',      'admin@blog.com',   'c3d6a1d5e7f8b2a9f0e1c4d7b3a6e9f2c5d8a1b4e7f0c3d6a1d5e7f8b2a9f0e1c4d7b3a6e9f2c5d8a1b4e7f0c3d6a1d5e7f8b2a9f0e1c4d7b3a6e9f2c5d8');
+  ('Fagner Borbulhas','fagner@gmail.com',  'f79e5a4627124e1bbf02653e5467742bfd5988f83eda6a7cc8b58c20abd1d1382a7400738706891fa4bc15560037e066c970faa2f78de7737c15e5d3188bfcc3'),
+  ('Admin Blog',      'admin@blog.com',   'c827af26eceea4c1646eb784de3708e6dd92c5a16c9abe285e2cb469928a30c31d75b9cc1ac4a5bc325edf838160c591190c32a0c442ae052d6bccf47fa7906b');
 
