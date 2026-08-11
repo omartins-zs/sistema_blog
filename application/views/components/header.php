@@ -10,19 +10,18 @@
   <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/open-iconic-bootstrap.min.css">
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/animate.css">
-
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/owl.carousel.min.css">
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/magnific-popup.css">
-
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/aos.css">
-
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/ionicons.min.css">
-
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="<?= base_url() ?>assets/css/jquery.timepicker.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 
 
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/flaticon.css">

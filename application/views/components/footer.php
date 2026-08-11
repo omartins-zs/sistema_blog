@@ -5,16 +5,16 @@
      </svg></div>
 
 
- <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
- <script src="<?= base_url() ?>assets/js/jquery-migrate-3.0.1.min.js"></script>
- <script src="<?= base_url() ?>assets/js/popper.min.js"></script>
- <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
- <script src="<?= base_url() ?>assets/js/jquery.easing.1.3.js"></script>
- <script src="<?= base_url() ?>assets/js/jquery.waypoints.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
  <script src="<?= base_url() ?>assets/js/jquery.stellar.min.js"></script>
- <script src="<?= base_url() ?>assets/js/owl.carousel.min.js"></script>
- <script src="<?= base_url() ?>assets/js/jquery.magnific-popup.min.js"></script>
- <script src="<?= base_url() ?>assets/js/aos.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
  <script src="<?= base_url() ?>assets/js/jquery.animateNumber.min.js"></script>
  <script src="<?= base_url() ?>assets/js/scrollax.min.js"></script>
 
