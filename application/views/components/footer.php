@@ -17,6 +17,8 @@
  <script src="<?= base_url() ?>assets/js/jquery.animateNumber.min.js"></script>
  <script src="<?= base_url() ?>assets/js/scrollax.min.js"></script>
  <script src="<?= base_url() ?>assets/js/main.js"></script>
+ <script>document.addEventListener('DOMContentLoaded',function(){var l=document.getElementById('ftco-loader');if(l){l.classList.remove('show');setTimeout(function(){l.style.display='none';},500);}});</script>
+
 
  <button id="theme-toggle" title="Alternar tema" style="position:fixed;bottom:2rem;right:2rem;z-index:9999;width:48px;height:48px;border-radius:50%;border:none;background:#F96D00;color:#fff;cursor:pointer;box-shadow:0 4px 15px rgba(249,109,0,.45);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .3s;">
    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>

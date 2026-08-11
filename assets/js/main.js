@@ -38,7 +38,7 @@
 	loader();
 
 	// Scrollax
-   $.Scrollax();
+   try { $.Scrollax(); } catch(e) {}
 
 
    var burgerMenu = function() {
