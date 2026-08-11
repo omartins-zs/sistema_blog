@@ -11,7 +11,7 @@ class Post extends CI_Controller
         $this->load->helper('blog');
         $this->load->library('session');
         $this->load->library('form_validation');
-        // $this->session->userdata('loggedin') == TRUE || redirect('user/login');
+        $this->session->userdata('loggedin') == TRUE || redirect('user/login');
     }
 
     public function index()
